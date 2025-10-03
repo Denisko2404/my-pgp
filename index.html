@@ -10,7 +10,7 @@
     <div class="container">
         <h1>My PGP Public Key</h1>
         <p>You can use this key to send me encrypted messages or verify my digital signatures.</p>
-        
+
         <pre id="pgp-key-block"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEaGN0eBYJKwYBBAHaRw8BAQdAQF3+GsktDPOLQ86TuOTAMsClAFdDLTDZE3zW
@@ -24,9 +24,17 @@ BFBg+Q58Q57Uc8wT6Qyq0rTGNdS51gI=
 =RUb1
 -----END PGP PUBLIC KEY BLOCK-----</code></pre>
 
-        <button id="copy-button">Copy Key to Clipboard</button>
+        <div class="actions">
+            <button id="copy-button">Copy Key</button>
+            <select id="format-select">
+                <option value="asc">ASCII (.asc)</option>
+                <option value="gpg">Binary (.gpg)</option>
+            </select>
+            <button id="download-button">Download</button>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/openpgp@5.10.0/dist/openpgp.min.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
