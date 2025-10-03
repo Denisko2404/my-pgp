@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 if (format === 'gpg') {
                     const publicKey = await openpgp.readKey({ armoredKey: keyText });
-                    const binaryKey = publicKey.toPacketlist().write();
+                    const binaryKey = await publicKey.write();
                     blob = new Blob([binaryKey], { type: 'application/octet-stream' });
                 } else {
                     blob = new Blob([keyText], { type: 'text/plain' });
