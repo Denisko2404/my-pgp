@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
+@keyframes animate-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
-    background: linear-gradient(to right top, #6d8dee, #b586e5, #d979d9, #f770c3, #ff6ba4);
+    background: linear-gradient(to right top, #6d8dee, #b586e5, #d979d9, #f770c3, #ff6ba4, #6d8dee);
+    background-size: 200% 200%;
     background-attachment: fixed;
+    animation: animate-gradient 15s ease-in-out infinite;
     color: #fff;
     font-family: 'Roboto Mono', monospace;
     display: flex;
@@ -128,4 +142,9 @@ select {
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 12px;
+}
+
+select option {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
 }
